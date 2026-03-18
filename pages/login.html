@@ -12,10 +12,10 @@
     <div id="greeting">Welcome Back</div>
     <div id="form-container">
         <div>Sign In</div>
-        <form action="/login" method="post">
+        <form id="login-form">
             <div>
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required aria-required="true">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required aria-required="true">
             </div>
             <div>
                 <label for="password">Password</label>
@@ -25,5 +25,55 @@
         </form>
         <p><a href="../pages/signup.html">Don't have an account with us? Create one here</a></p>
     </div>
+
+
+
+    <!-- firebase auth below using script instead of npm -->
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCuEWlbYLXz-fl5HJFqHXNSYRfjXjbjGdY",
+            authDomain: "login-auth-4aadb.firebaseapp.com",
+            projectId: "login-auth-4aadb",
+            storageBucket: "login-auth-4aadb.firebasestorage.app",
+            messagingSenderId: "995719453314",
+            appId: "1:995719453314:web:cf28dcea1dce2736c3f29b",
+            measurementId: "G-H6T2YY1L82"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // grab the form and listen for submit
+        const loginForm = document.getElementById('login-form');
+
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault(); // stops the page from refreshing
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                console.log('Logged in!', userCredential.user);
+                // redirect after successful login
+                window.location.href = '../pages/dashboard.html';
+
+            } catch (error) {
+                if (error.code === 'auth/user-not-found') {
+                    alert('No account found with that email.');
+                } else if (error.code === 'auth/wrong-password') {
+                    alert('Incorrect password, please try again.');
+                } else {
+                    alert('Something went wrong: ' + error.message);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

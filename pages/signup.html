@@ -15,7 +15,7 @@
             <h3>Join Us and Stay Connected</h3>
             <p>Create your account below to access home exercises, progress, and community updates.</p>
         </div>
-        <form action="/signup" method="post" id="form">
+        <form id="form">
             <div class="form-row">
                 <div class="input-div">
                     <label for="name">Full Name*</label>
@@ -92,6 +92,81 @@
 
 
 
+
+
+
+    <!-- firebase auth below using script instead of npm -->
+
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
+        import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
+    
+        const firebaseConfig = {
+            apiKey: "AIzaSyCuEWlbYLXz-fl5HJFqHXNSYRfjXjbjGdY",
+            authDomain: "login-auth-4aadb.firebaseapp.com",
+            projectId: "login-auth-4aadb",
+            storageBucket: "login-auth-4aadb.firebasestorage.app",
+            messagingSenderId: "995719453314",
+            appId: "1:995719453314:web:cf28dcea1dce2736c3f29b",
+            measurementId: "G-H6T2YY1L82"
+        };
+    
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+    
+        const signupForm = document.getElementById('form');
+    
+        signupForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+    
+            // grab all the field values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const birthdate = document.getElementById('birthdate').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+    
+            // check passwords match before even calling Firebase
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return; // stops here, goes no further
+            }
+    
+            try {
+                // Step 1: create the account in Firebase Auth
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+    
+                // Step 2: save the extra info to Firestore database
+                await setDoc(doc(db, 'users', user.uid), {
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    birthdate: birthdate || null, // null if they left it blank
+                    createdAt: new Date()
+                });
+    
+                console.log('Account created!', user);
+                // redirect to login after successful signup
+                window.location.href = '../pages/login.html';
+    
+            } catch (error) {
+                if (error.code === 'auth/email-already-in-use') {
+                    alert('An account with that email already exists.');
+                } else if (error.code === 'auth/weak-password') {
+                    alert('Password should be at least 8 characters.');
+                } else {
+                    alert('Something went wrong: ' + error.message);
+                }
+            }
+        });
+
+        
+    </script>
 
 
 

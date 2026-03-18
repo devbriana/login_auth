@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <!-- side bar = main navigation -->
+    <aside>
+        <div id="dash-icon-title">
+            <span id="dash-img"></span>
+            <h1>Dashboard</h1>
+        </div>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li>
+                    <img src="/css/dashsvgs/home.svg" alt="Home" class="nav-icon">
+                    Home
+                </li>
+                <li>
+                    <img src="/css/dashsvgs/profile.svg" alt="Profile" class="nav-icon">
+                    Profile
+                </li>
+                <li>
+                    <img src="/css/dashsvgs/messages.svg" alt="Messages" class="nav-icon">
+                    Messages
+                </li>
+                <li>
+                    <img src="/css/dashsvgs/history.svg" alt="History" class="nav-icon">
+                    History
+                </li>
+                <li>
+                    <img src="/css/dashsvgs/tasks.svg" alt="Tasks" class="nav-icon">
+                    Tasks
+                </li>
+                <li>
+                    <img src="/css/dashsvgs/communities.svg" alt="Communities" class="nav-icon">
+                    Communities
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img src="/css/dashsvgs/settings.svg" alt="Settings" class="nav-icon">
+                    Settings
+                </li>
+                <li>
+                    <img src="/css/dashsvgs/support.svg" alt="Support" class="nav-icon">
+                    Support
+                </li>
+                <li>
+                    <img src="/css/dashsvgs/privacy.svg" alt="Privacy" class="nav-icon">
+                    Privacy
+                </li>
+            </ul>
+            <ul>
+                <li id="logout">
+                    <button id="logout-btn">Log Out</button>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+
+
+    <!-- top bar = secondary/utility navigation -->
+    <header aria-label="Utility navigation">
+      <div id="row-one">
+        <div id="search-container">
+            <form action="/search" method="get" role="search"></form>
+            <label for="search"><img src="/css/dashsvgs/search.svg" alt="search" class="header-icon"></label>
+            <input type="search" name="search" id="search" placeholder="Search...">
+        </div>
+        <div id="profile-nav-dash">
+            <div><img src="/css/dashsvgs/notifications.svg" alt="notifications" class="header-icon"></div>
+            <div><img src="/css/svg-propics/mypic.svg" alt="profile thumbnail" class="pic-thumbnail"></div>
+            <div><strong>DevBri</strong></div>
+        </div>
+      </div>
+      <div id="row-two">
+        <div id="left-side">
+            <div id="thumbnail"><img src="/css/svg-propics/mypic.svg" alt="pofile thumbnail"></div>
+            <div id="greeting">
+                <div>Hi there,</div>
+                <div>DevBri (@devbri)</div>
+            </div>
+        </div>
+        <div id="right-side">
+            <ul>
+                <li>New</li>
+                <li>Upload</li>
+                <li>Share</li>
+            </ul>
+        </div>  
+      </div>
+    </header>
+
+
+
+    <!-- main dashboard content -->
+    <main>
+        <div id="proj-container">
+            <h3>Your Projects</h3>
+            <div id="proj-cards">
+                <div class="card">
+                    <h3>Project One</h3>
+                    <p>These are some placeholder words to describe what this project is.</p>
+                    <div class="three-icons">
+                        <div><img src="/css/svg-proj-card/star.svg" alt="favorite icon" class="card-icons"></div>
+                        <div><img src="/css/svg-proj-card/eye.svg" alt="view icon" class="card-icons"></div>
+                        <div><img src="/css/svg-proj-card/fork.svg" alt="share icon" class="card-icons"></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Project Two</h3>
+                    <p>These are some placeholder words to describe what this project is.</p>
+                    <div class="three-icons">
+                        <div><img src="/css/svg-proj-card/star.svg" alt="favorite icon" class="card-icons"></div>
+                        <div><img src="/css/svg-proj-card/eye.svg" alt="view icon" class="card-icons"></div>
+                        <div><img src="/css/svg-proj-card/fork.svg" alt="share icon" class="card-icons"></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Project Three</h3>
+                    <p>These are some placeholder words to describe what this project is.</p>
+                    <div class="three-icons">
+                        <div><img src="/css/svg-proj-card/star.svg" alt="favorite icon" class="card-icons"></div>
+                        <div><img src="/css/svg-proj-card/eye.svg" alt="view icon" class="card-icons"></div>
+                        <div><img src="/css/svg-proj-card/fork.svg" alt="share icon" class="card-icons"></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Project Four</h3>
+                    <p>These are some placeholder words to describe what this project is.</p>
+                    <div class="three-icons">
+                        <div><img src="/css/svg-proj-card/star.svg" alt="favorite icon" class="card-icons"></div>
+                        <div><img src="/css/svg-proj-card/eye.svg" alt="view icon" class="card-icons"></div>
+                        <div><img src="/css/svg-proj-card/fork.svg" alt="share icon" class="card-icons"></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Project Five</h3>
+                    <p>These are some placeholder words to describe what this project is.</p>
+                    <div class="three-icons">
+                        <div><img src="/css/svg-proj-card/star.svg" alt="favorite icon" class="card-icons"></div>
+                        <div><img src="/css/svg-proj-card/eye.svg" alt="view icon" class="card-icons"></div>
+                        <div><img src="/css/svg-proj-card/fork.svg" alt="share icon" class="card-icons"></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Project Six</h3>
+                    <p>These are some placeholder words to describe what this project is.</p>
+                    <div class="three-icons">
+                        <div><img src="/css/svg-proj-card/star.svg" alt="favorite icon" class="card-icons"></div>
+                        <div><img src="/css/svg-proj-card/eye.svg" alt="view icon" class="card-icons"></div>
+                        <div><img src="/css/svg-proj-card/fork.svg" alt="share icon" class="card-icons"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="right-bar">
+            <div id="announcements-container">
+                <h3>Announcements</h3>
+                <div id="announcements-cards">
+                    <div>
+                        <h3>Site Maintenance</h3>
+                        <p>jkdhfd shsf ksdf shdfsajdfh sdf skdfj</p>
+                    </div>
+                    <div>
+                        <h3>Community Share Day</h3>
+                        <p>jkdhfd shsf ksdf shdfsajdfh sdf skdfj</p>
+                    </div>
+                    <div>
+                        <h3>Updated Privacy Policy</h3>
+                        <p>jkdhfd shsf ksdf shdfsajdfh sdf skdfj shg sjfh jk sfgsjhdfg ddf.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="trending-container">
+                <h3>Trending</h3>
+                <div id="trending-cards">
+                    <div>
+                        <div class="icon"><img src="/css/svg-propics/pic1.svg" alt="user thumbnail" class="user-thumbnail"></div>
+                        <div>
+                            <p class="user">@Morgan</p>
+                            <p>really cool stuff</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="icon"><img src="/css/svg-propics/pic2.svg" alt="user thumbnail" class="user-thumbnail"></div>
+                        <div>
+                            <p class="user">@Alex</p>
+                            <p>also cool stuff</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="icon"><img src="/css/svg-propics/pic3.svg" alt="user thumbnail" class="user-thumbnail"></div>
+                        <div>
+                            <p class="user">@Tegan</p>
+                            <p>cool project</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="icon"><img src="/css/svg-propics/pic4.svg" alt="user thumbnail" class="user-thumbnail"></div>
+                        <div>
+                            <p class="user">@Kendall</p>
+                            <p>another cool project</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- footer -->
+    <footer>
+        <p>copyright @DevBri</p>
+    </footer>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+        import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCuEWlbYLXz-fl5HJFqHXNSYRfjXjbjGdY",
+            authDomain: "login-auth-4aadb.firebaseapp.com",
+            projectId: "login-auth-4aadb",
+            storageBucket: "login-auth-4aadb.firebasestorage.app",
+            messagingSenderId: "995719453314",
+            appId: "1:995719453314:web:cf28dcea1dce2736c3f29b",
+            measurementId: "G-H6T2YY1L82"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // protect the page — if no one is logged in, send them back to login
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                window.location.href = '../pages/login.html';
+            }
+        });
+
+        // logout button
+        document.getElementById('logout').addEventListener('click', () => {
+            signOut(auth).then(() => {
+                window.location.href = '../pages/login.html';
+            });
+        });
+    </script>
+</body>
+</html>
