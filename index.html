@@ -9,8 +9,9 @@
 </head>
 
 <body>
-    <h1>Login Here</h1>
+    <div id="greeting">Welcome Back</div>
     <div id="form-container">
+        <div>Sign In</div>
         <form action="/login" method="post">
             <div>
                 <label for="username">Username</label>
@@ -20,7 +21,9 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required aria-required="true">
             </div> 
+            <button type="submit">Sign In</button>
         </form>
+        <p><a href="/signup">Don't have an account with us? Create one here</a></p>
     </div>
 </body>
 </html>
