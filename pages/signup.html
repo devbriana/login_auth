@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+
+    <link rel="stylesheet" href="../css/signup.css">
+</head>
+
+<body>
+    <div id="greeting">The Journey Towards Better Health Starts Here</div>
+    <div id="form-container">
+        <div id="form-header">
+            <h3>Join Us and Stay Connected</h3>
+            <p>Create your account below to access home exercises, progress, and community updates.</p>
+        </div>
+        <form action="/signup" method="post" id="form">
+            <div class="form-row">
+                <div class="input-div">
+                    <label for="name">Full Name*</label>
+                    <input type="text" name="name" id="name" placeholder="First Last" required aria-required="true" aria-describedby="name-required" minlength="2" pattern="^[A-Za-z]+ [A-Za-z]+ ?A-Za-z]+$">
+                    <span class="error-message">
+                        <span id="name-required">Enter your full name</span>
+                        <span class="error-icon"></span> <!-- icon placeholder -->
+                    </span>
+                    <span class="check">
+                        <span class="check-icon"></span> <!-- icon placeholder -->
+                    </span>
+                </div>
+                <div class="input-div">
+                    <label for="email">Email*</label>
+                    <input type="email" name="email" id="email" placeholder="Example@gmail.com" required aria-required="true" aria-describedby="invalid-email">
+                    <span class="error-message">
+                        <span id="invalid-email">Enter a Valid Email</span>
+                        <span class="error-icon"></span> <!-- icon placeholder -->
+                    </span>
+                    <span class="check">
+                        <span class="check-icon"></span> <!-- icon placeholder -->
+                    </span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="input-div">
+                    <label for="phone">Phone Number*</label>
+                    <input type="tel" name="phone" id="phone" placeholder="777-777-7777" pattern="^\d{10}$|^\d{3}([\s\-\.])\d{3}\1\d{4}$" required aria-required="true" aria-describedby="invalid-tel" minlength="10">
+                    <span class="error-message">
+                        <span id="invalid-tel">Enter a Valid Number</span>
+                        <span class="error-icon"></span> <!-- icon placeholder -->
+                    </span>
+                    <span class="check">
+                        <span class="check-icon"></span> <!-- icon placeholder -->
+                    </span>
+                </div>
+                <div class="input-div">
+                    <label for="birthdate">Birth Date (optional)</label>
+                    <input type="date" name="birthdate" id="birthdate">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="input-div">
+                    <label for="password">Password*</label>
+                    <input type="password" name="password" id="password" required placeholder="Enter Password" minlength="8" aria-describedby="password-minlength" aria-required="true">
+                    <span class="error-message">
+                        <span id="password-minlength">(Minimum of 8 characters)</span>
+                        <span class="error-icon"></span> <!-- icon placeholder -->
+                    </span>
+                    <span class="check">
+                        <span aria-hidden="true">(Minimum of 8 characters)</span>
+                        <span class="check-icon"></span> <!-- icon placeholder -->
+                    </span>
+                </div>
+                <div class="input-div">
+                    <label for="confirm-password">Confirm Password*</label>
+                    <input type="password" name="confirm-password" id="confirm-password" required placeholder="Confirm-password" minlength="8" aria-describedby="retype-password" aria-required="true">
+                    <span class="error-message">
+                        <span id="retype-password">Retype your password</span>
+                        <span class="error-icon"></span> <!-- icon placeholder -->
+                    </span>
+                    <span class="check">
+                        <span aria-hidden="true">Retype your password</span>
+                        <span class="check-icon"></span> <!-- icon placeholder -->
+                    </span>
+                    
+                </div>
+            </div>
+            <button type="submit">Create An Account</button>
+        </form>
+        <p>Already have an account?<a href="../pages/login.html"> Log in</a></p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

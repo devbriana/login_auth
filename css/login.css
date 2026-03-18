@@ -27,7 +27,6 @@ body {
     font-size: 52px;
     align-items: center;
     justify-content: center;
-    border-radius: 15px;
 }
 
 #form-container {
@@ -40,6 +39,7 @@ body {
     justify-items: center;
     align-items: center;
     background-color: rgba(76, 88, 78, 0.7);
+    border-radius: 5px;
     color: whitesmoke;
     gap: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -82,8 +82,11 @@ form button {
  margin-top: 10px;
  margin-bottom: 10px;
  background-color: rgb(231, 220, 198);
- 
+ align-self: center;
+ box-shadow: none;
+ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
 form button:hover {
     background-color: rgb(236, 195, 115);
     cursor: pointer;
