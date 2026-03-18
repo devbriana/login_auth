@@ -226,6 +226,7 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
         import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
+        import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyCuEWlbYLXz-fl5HJFqHXNSYRfjXjbjGdY",
@@ -239,11 +240,18 @@
 
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
+        const db = getFirestore(app);
+
 
         // protect the page — if no one is logged in, send them back to login
-        onAuthStateChanged(auth, (user) => {
+
+        onAuthStateChanged(auth, async (user) => {
             if (!user) {
                 window.location.href = '../pages/login.html';
+            } else {
+                const userDoc = await getDoc(doc(db, 'users', user.uid));
+                const name = userDoc.data().name;
+                document.getElementById('greeting').children[1].textContent = name;
             }
         });
 
