@@ -143,7 +143,7 @@ input:invalid:not(:focus):not(:placeholder-shown) {
 .error-icon {
     width: 1.5em;
     height: 1.5em;
-    background-image: url(alert.svg);
+    background-image: url(/css/formsvgs/alert.svg);
     vertical-align: middle;
     display: none;
     background-size: contain;
@@ -189,7 +189,7 @@ input:required:valid:not(:focus):not(:placeholder-shown) {
 .check-icon {
     width: 1.5em;
     height: 1.5em;
-    background-image: url(check.svg);
+    background-image: url(/css/formsvgs/check.svg);
     vertical-align: middle;
     display: none;
     background-size: contain;

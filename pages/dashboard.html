@@ -76,7 +76,7 @@
         <div id="profile-nav-dash">
             <div><img src="/css/dashsvgs/notifications.svg" alt="notifications" class="header-icon"></div>
             <div><img src="/css/svg-propics/mypic.svg" alt="profile thumbnail" class="pic-thumbnail"></div>
-            <div><strong>DevBri</strong></div>
+            <div id="greetingtwo"><strong>DevBri</strong></div>
         </div>
       </div>
       <div id="row-two">
@@ -102,10 +102,10 @@
     <!-- main dashboard content -->
     <main>
         <div id="proj-container">
-            <h3>Your Projects</h3>
+            <h3>This Month's Fitness Goals</h3>
             <div id="proj-cards">
                 <div class="card">
-                    <h3>Project One</h3>
+                    <h3>Week One</h3>
                     <p>These are some placeholder words to describe what this project is.</p>
                     <div class="three-icons">
                         <div><img src="/css/svg-proj-card/star.svg" alt="favorite icon" class="card-icons"></div>
@@ -114,7 +114,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <h3>Project Two</h3>
+                    <h3>Week Two</h3>
                     <p>These are some placeholder words to describe what this project is.</p>
                     <div class="three-icons">
                         <div><img src="/css/svg-proj-card/star.svg" alt="favorite icon" class="card-icons"></div>
@@ -123,7 +123,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <h3>Project Three</h3>
+                    <h3>Week Three</h3>
                     <p>These are some placeholder words to describe what this project is.</p>
                     <div class="three-icons">
                         <div><img src="/css/svg-proj-card/star.svg" alt="favorite icon" class="card-icons"></div>
@@ -132,7 +132,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <h3>Project Four</h3>
+                    <h3>Week Four</h3>
                     <p>These are some placeholder words to describe what this project is.</p>
                     <div class="three-icons">
                         <div><img src="/css/svg-proj-card/star.svg" alt="favorite icon" class="card-icons"></div>
@@ -141,7 +141,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <h3>Project Five</h3>
+                    <h3>Bonus (optional)</h3>
                     <p>These are some placeholder words to describe what this project is.</p>
                     <div class="three-icons">
                         <div><img src="/css/svg-proj-card/star.svg" alt="favorite icon" class="card-icons"></div>
@@ -150,7 +150,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <h3>Project Six</h3>
+                    <h3>Bonus (optional)</h3>
                     <p>These are some placeholder words to describe what this project is.</p>
                     <div class="three-icons">
                         <div><img src="/css/svg-proj-card/star.svg" alt="favorite icon" class="card-icons"></div>
@@ -164,18 +164,18 @@
 
         <div id="right-bar">
             <div id="announcements-container">
-                <h3>Announcements</h3>
+                <h3>Your Fitness History</h3>
                 <div id="announcements-cards">
                     <div>
-                        <h3>Site Maintenance</h3>
+                        <h3>March</h3>
                         <p>jkdhfd shsf ksdf shdfsajdfh sdf skdfj</p>
                     </div>
                     <div>
-                        <h3>Community Share Day</h3>
+                        <h3>February</h3>
                         <p>jkdhfd shsf ksdf shdfsajdfh sdf skdfj</p>
                     </div>
                     <div>
-                        <h3>Updated Privacy Policy</h3>
+                        <h3>January</h3>
                         <p>jkdhfd shsf ksdf shdfsajdfh sdf skdfj shg sjfh jk sfgsjhdfg ddf.</p>
                     </div>
                 </div>
@@ -252,6 +252,7 @@
                 const userDoc = await getDoc(doc(db, 'users', user.uid));
                 const name = userDoc.data().name;
                 document.getElementById('greeting').children[1].textContent = name;
+                document.getElementById('greetingtwo').children[0].textContent = name;
             }
         });
 
